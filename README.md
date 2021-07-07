@@ -7,14 +7,23 @@ Contact information: ealopera@gmail.com
 
 ### 1. Independent analysis for multiple phenotypes
 The script Phenotype_analysis_lmekin will calculate the mixed model \
- Phenotype~ age +gender + age^2 + outcome  \
-where outcome is defined as 0="healthy non-carriers" 1="healthy carriers"
+ Phenotype~ age +gender + age^2 + outcome + family  \
+where:
+"outcome" is defined as 0="healthy non-carriers" 1="healthy carriers" \
+and "family" is a random intercept
 
 Requirements: \
 -Phenotype(s) file: File containing the columns "id","fam","mother","father","group", "age","gender". \
--list of selected SNPs for GRM  (GDS or plink format). \
--list of covariates (or model). 
+where the colums "id","fam","mother","father" consist of independent identifiers for each individual, family, mother and father, respectively. \
+The column "group" classifies the individuals according to the cardiomiopathy symtoms and their state of PLN mutation in four groups, namely: "asympt_ncarr" "sympt_ncarr","asympt_carr","sympt_carr" 
+-phenotypes list (optional, defaults to all columns of the phenotypes file excep the ones mentioned above) to be evaluated in a file with a phenotype per line without header 
 
-### INSTRUCTIONS
-If you are going for a quick analysis we recomend to use the GDS version of SAIGE. it uses the genotype (GT) field of the files and each chromosome might take up to 20 min for 40k samples. You will need all your files to be in GDS format. Otherwise, if you need a more precise, but time consuming (~7h per chormosome in 40k samples) anaylsis use normal SAIGE and prepare vcf of bgen files with their respective index files and make sure they have the dosage (DS field). \
-Detailed instructions are found in the respective folders.
+### 2. Permutation analysis for multiple phenotypes
+the script Phenotype_permutations will add the permutation_FDR column to the independent models above. this is made in a separate script because it can take a lot of memory and time otherwise, but if you feel like your system can take it you can merge both scripts.
+
+Requirements:
+-Phenotype(s) file: the same phenotype described above
+-independent models result: the output from step one
+-number of permutations (optional, defaults to 100)
+
+
