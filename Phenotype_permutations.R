@@ -59,7 +59,7 @@ option_list = list(
               help="full path to the inputfile containing the columns 'id','fam','mother',father','group','age','gender', and all phenptypes to be analysed", metavar="character"),
   make_option(c("-o", "--output"), type="character", default=NULL,
               help="output directory", metavar="character"),
-  make_option(c("-i", "--independent"), type="character", default=NULL,
+  make_option(c("-p", "--independent"), type="character", default=NULL,
               help="complete path to the independent models results", metavar="character"),
   make_option(c("-n", "--nperm"), type="character", default=NULL,
               help="number of permutations", metavar="character")
