@@ -91,9 +91,6 @@ if(!is.null(input)){
   {print("Error: No father column in input!");} 
   if("group" %!in% colnames(pheno_complete2))
   {print("Error: No group column in input!");} 
-  #### list of phenotypes to permute
-  to_use<-which( names(pheno_complete2) %!in% c("id","fam","mother","father","group", "age","gender") )
-  phenolist<-names(pheno_complete2)[to_use]
 } else{
   print("Error: No input files!")
 }
@@ -116,6 +113,8 @@ if(!is.null(nperm)){
 if(!is.null(indep)){
   #### make list of phenotypes to analize, remove the unwanted
   phenoresults<-fread(indep,data.table=F)
+    #### list of phenotypes to permute
+  phenolist<-phenoresults$Trait
 }else{
   print("Error: No independent file results !!")
   
