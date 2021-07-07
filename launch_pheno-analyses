@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ml RPlus
+
+### phenotypes file
+input_file="" 
+### output directory
+output_dir="/groups/umcg-ugli/tmp01/umcg-elopera/"
+### list of phenotypes
+phenotype_list="/groups/umcg-ugli/tmp01/umcg-elopera/phenolist"
+
+### Step 1 idependent models
+Rscript Phenotypes_analysis_lmekin.R -i $input_file -o $output_dir -p $phenotype_list
+#### creates the file ${output_dir}/phenotypes_age_square.txt
+
+### Step 2 permutations
+Rscript Phenotype_permutations.R -i $input_file -o $output_dir -p ${output_dir}/phenotypes_age_square.txt -n 100
