@@ -16,7 +16,8 @@ Requirements: \
 -Phenotype(s) file: File containing the columns "id","fam","mother","father","group", "age","gender". \
 where the colums "id","fam","mother","father" consist of independent identifiers for each individual, family, mother and father, respectively. \
 The column "group" classifies the individuals according to the cardiomiopathy symtoms and their state of PLN mutation in four groups, namely: "asympt_ncarr" "sympt_ncarr","asympt_carr","sympt_carr" \
--phenotypes list (optional, defaults to all columns of the phenotypes file excep the ones mentioned above) to be evaluated in a file with a phenotype per line without header 
+-phenotypes list (optional, defaults to all columns of the phenotypes file excep the ones mentioned above) to be evaluated in a file with a phenotype per line without header \
+-output directory
 
 ### 2. Permutation analysis for multiple phenotypes
 the script Phenotype_permutations will add the permutation_FDR column to the independent models above. this is made in a separate script because it can take a lot of memory and time otherwise, but if you feel like your system can take it you can merge both scripts.
@@ -25,5 +26,5 @@ Requirements:
 -Phenotype(s) file: the same phenotype described above \
 -independent models result: the output from step one \
 -number of permutations (optional, defaults to 100) \
-
+-output directory \
 
