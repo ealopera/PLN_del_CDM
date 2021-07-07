@@ -9,13 +9,13 @@ Contact information: ealopera@gmail.com
 The script Phenotype_analysis_lmekin will calculate the mixed model \
  Phenotype~ age +gender + age^2 + outcome + family  \
 where:
-"outcome" is defined as 0="healthy non-carriers" 1="healthy carriers" \
-and "family" is a random intercept based on the familial information
+&nbsp;&nbsp"outcome" is defined as 0="healthy non-carriers" 1="healthy carriers" \
+&nbsp;&nbspand "family" is a random intercept based on the familial information
 
 Requirements: \
 -Phenotype(s) file: File containing the columns "id", "fam", "mother", "father", "group", "age", "gender". \
-where the colums "id","fam","mother","father" consist of independent identifiers for each individual, family, mother and father, respectively. \
-The column "group" classifies the individuals according to the cardiomiopathy symtoms and their state of PLN mutation in four groups, namely: "asympt_ncarr" "sympt_ncarr", "asympt_carr", "sympt_carr". \
+&nbsp;&nbspwhere the colums "id","fam","mother","father" consist of independent identifiers for each individual, family, mother and father, respectively. \
+&nbsp;&nbspThe column "group" classifies the individuals according to the cardiomiopathy symtoms and their state of PLN mutation in four groups, namely: "asympt_ncarr" "sympt_ncarr", "asympt_carr", "sympt_carr". \
 -phenotypes list (optional, defaults to all columns of the phenotypes file excep the ones mentioned above) to be evaluated in a file with a phenotype per line without header. \
 -output directory.
 
