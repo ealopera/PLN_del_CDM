@@ -129,11 +129,10 @@ if(!is.null(indep)){
 Kmatrix<-makekinship (famid=pheno_complete2$fam, id=pheno_complete2$id, 
                       father.id=pheno_complete2$father,mother.id=pheno_complete2$mother)
 ###factorize group variable
-pheno_complete2$group<-factor(pheno_complete2$group,levels=c("asympt_ncarr",
-                                                             "sympt_ncarr","asympt_carr","sympt_carr" ))
+pheno_complete2$group<-factor(pheno_complete2$group,levels=c("asympt_carr","sympt_carr" ))
 ###create outcome variable
 pheno_complete2$outcome<-ifelse(pheno_complete2$group=="asympt_carr",1,
-                                ifelse(pheno_complete2$group=="asympt_ncarr",0,NA))
+                                ifelse(pheno_complete2$group=="sympt_carr",0,NA))
 pheno_complete2$outcome<-factor(pheno_complete2$outcome,levels=c(0,1))
 ### models to create permutation results
 
@@ -162,7 +161,7 @@ for (cname in phenolist){
                       data=pheno_perm, varlist=list(Kmatrix),na.action=na.omit )
   #store results
   mperm1<-extract_coxme_table(modelperm1)
-  phenoresults_permuted<-rbind(phenoresults_permuted,c(names(pheno_complete2)[v],"asymp_carrier",ncase,ncontrol,mperm1[4,]))
+  phenoresults_permuted<-rbind(phenoresults_permuted,c(names(pheno_complete2)[v],"asympt_carrier",ncase,ncontrol,mperm1[4,]))
   }
   }
 }
@@ -185,7 +184,7 @@ names(phenoresults_permuted)<-c("Trait","Cases","Ncase","Ncontrols","Effect","St
 ##################calculate q-value for permutations
 ################################################################################
 
-C1<-FDR_calc(phenodb=phenoresults, permdb=phenoresults_permuted,cases="asymp_carrier")
+C1<-FDR_calc(phenodb=phenoresults, permdb=phenoresults_permuted,cases="asympt_carrier")
 new_pheno_results<-C1
 names(new_pheno_results)[11]<-"permutation_FDR"
 new_pheno_results<-new_pheno_results[,-10]
