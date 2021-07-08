@@ -14,7 +14,7 @@ where:
 
 Requirements: \
 -Phenotype(s) file: File containing the columns "id", "fam", "mother", "father", "group", "age", "gender". \
-  where the colums "id","fam","mother","father" consist of independent identifiers for each individual, family, mother and father, respectively. \
+  where the colums "id","fam","mother","father" consist of unique identifiers for each individual, listing its family ID, its mother and father, respectively. Family ID connects individuals with blood relationships, as well spouses if there are offsprings \
   The column "group" classifies the individuals according to the cardiomiopathy symtoms and their state of PLN mutation in four groups, namely: "asympt_ncarr" "sympt_ncarr", "asympt_carr", "sympt_carr". \
 -phenotypes list (optional, defaults to all columns of the phenotypes file except the ones mentioned above) to be evaluated in a file with a phenotype per line without header. \
 -output directory.
