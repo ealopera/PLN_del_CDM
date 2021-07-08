@@ -15,3 +15,8 @@ Rscript Phenotypes_analysis_lmekin.R -i $input_file -o $output_dir -p $phenotype
 
 ### Step 2 permutations
 Rscript Phenotype_permutations.R -i $input_file -o $output_dir -p ${output_dir}/phenotypes_age_square.txt -n 100
+
+
+### Step 3 age distribution
+Rscript age_distribution.R -i $input_file -o $output_dir 
+
