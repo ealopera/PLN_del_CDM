@@ -20,11 +20,14 @@ Requirements: \
 -output directory.
 
 ### 2. Permutation analysis for quantitative phenotypes
-the script Phenotype_permutations will add the permutation_FDR column to the independent models above. this is made in a separate script because it can take a lot of memory and time otherwise, but if you feel like your system can take it you can merge both scripts.
+The script Phenotype_permutations will add the permutation_FDR column to the independent models above. this is made in a separate script because it can take a lot of memory and time otherwise, but if you feel like your system can take it you can merge both scripts.
 
 Requirements:
 -Phenotype(s) file: the same phenotype described above. \
 -independent models result: the output from step one. \
 -number of permutations (optional, defaults to 100). \
 -output directory. \
+
+### 3. Age distribution
+The script age_distribution calculates a t.test for age between groups and draws a box-violin plot.
 
