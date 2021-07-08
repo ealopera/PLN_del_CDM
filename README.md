@@ -1,4 +1,4 @@
-# Analysis for PLN-(arg14del) in four groups of inidviduals
+# Analysis determinants of cardiomyopathy protective factors in PLN-(arg14-del) carriers
 
 Created by: Esteban Lopera.\
 Created on: 07-07-2021. \
