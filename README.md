@@ -5,7 +5,7 @@ Created on: 07-07-2021. \
 Contact information: ealopera@gmail.com
 
 
-### 1. Independent analysis for multiple phenotypes
+### 1. Independent analysis for quantitative phenotypes
 The script Phenotype_analysis_lmekin will calculate the mixed model \
  Phenotype~ age +gender + age^2 + outcome + family  \
 where:
@@ -19,7 +19,7 @@ Requirements: \
 -phenotypes list (optional, defaults to all columns of the phenotypes file except the ones mentioned above) to be evaluated in a file with a phenotype per line without header. \
 -output directory.
 
-### 2. Permutation analysis for multiple phenotypes
+### 2. Permutation analysis for quantitative phenotypes
 the script Phenotype_permutations will add the permutation_FDR column to the independent models above. this is made in a separate script because it can take a lot of memory and time otherwise, but if you feel like your system can take it you can merge both scripts.
 
 Requirements:
