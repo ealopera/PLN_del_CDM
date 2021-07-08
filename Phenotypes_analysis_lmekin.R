@@ -91,11 +91,10 @@ if(!is.null(phenofile)){
 Kmatrix<-makekinship (famid=pheno_complete2$fam, id=pheno_complete2$id, 
                       father.id=pheno_complete2$father,mother.id=pheno_complete2$mother)
 ###factorize group variable
-pheno_complete2$group<-factor(pheno_complete2$group,levels=c("asympt_ncarr",
-                                                             "sympt_ncarr","asympt_carr","sympt_carr" ))
+pheno_complete2$group<-factor(pheno_complete2$group,levels=c("asympt_carr","sympt_carr" ))
 ###create outcome variable
 pheno_complete2$outcome<-ifelse(pheno_complete2$group=="asympt_carr",1,
-                                 ifelse(pheno_complete2$group=="asympt_ncarr",0,NA))
+                                 ifelse(pheno_complete2$group=="sympt_carr",0,NA))
 pheno_complete2$outcome<-factor(pheno_complete2$outcome,levels=c(0,1))
 
 ### models to create independent results
@@ -110,7 +109,7 @@ phenoresults<-c()
                       data=pheno_complete2, varlist=list(Kmatrix),na.action=na.omit )
       #store results
       m1<-extract_coxme_table(model1)
-      phenoresults<-rbind(phenoresults,c(names(pheno_complete2)[v],"asymp_carrier",ncase,ncontrol,m1[4,]))
+      phenoresults<-rbind(phenoresults,c(names(pheno_complete2)[v],"asympt_carrier",ncase,ncontrol,m1[4,]))
     }
   }
 # transform into a proper matrix
