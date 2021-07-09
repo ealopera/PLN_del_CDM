@@ -5,7 +5,7 @@ Created on: 07-07-2021. \
 Contact information: ealopera@gmail.com
 
 ### General requirements
-For proper function, we recommend to use R with the following packages isntalled: "tidyverse","data.table","ggpubr","kinship2","coxme","optparse".
+For proper function, we recommend to use R with the following packages isntalled: "tidyverse", "data.table", "ggpubr", "kinship2", "coxme", "optparse".
 
 
 
