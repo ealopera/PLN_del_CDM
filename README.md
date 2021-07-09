@@ -4,6 +4,10 @@ Created by: Esteban Lopera.\
 Created on: 07-07-2021. \
 Contact information: ealopera@gmail.com
 
+### General requirements
+For proper function, we recommend to use R with the following packages isntalled: "tidyverse","data.table","ggpubr","kinship2","coxme","optparse".
+
+
 
 ### 1. Independent analysis for quantitative phenotypes
 The script Phenotype_analysis_lmekin will calculate the mixed model \
